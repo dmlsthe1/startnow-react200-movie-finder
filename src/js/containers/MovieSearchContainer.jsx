@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 import {
     searchBtn
@@ -35,6 +36,7 @@ class MovieSearchContainer extends React.Component{
 
     render() {
         const {movies} = this.props;
+
         return (
             <div>
                 <h1 className="text-center py-3">Movie Finder</h1>
@@ -49,7 +51,7 @@ class MovieSearchContainer extends React.Component{
                     </div>
                 </form>
 
-                {movies.length > 0 && movies.map(movie => {
+                {movies.length > 0 && movies.map((movie, index) => {
                     return (
                         <div key={movie.imdbID} className="my-3">
                             <div className="card">
@@ -59,13 +61,15 @@ class MovieSearchContainer extends React.Component{
                                             <img className="card-img p-3" src={movie.Poster} alt="Card image cap" />
                                         </div>
                                         <div className="col-sm-9  pl-0">
-                                            <div className="cardSize pl-0">
-                                                <div className="card-body pl-0 text-right">
-                                                    <h3 className="card-title text-left"><a href="#">{movie.Title}</a></h3>
-                                                    <p className="text-left">{movie.Year}</p>
-                                                    <hr className="bg-dark" />
-                                                    <p className="card-text text-left">{movie.Plot}</p>
-                                                    <a href="#" className="align-bottom btn btn-primary">{movie.Title} Details</a>
+                                            <div className="row">
+                                                <div className="searchBtnParent cardSize pl-0">
+                                                    <div className="searchBtnParent card-body pl-0 text-right">
+                                                        <h3 className="card-title text-left"><a href="#">{movie.Title}</a></h3>
+                                                        <p className="text-left">{movie.Year}</p>
+                                                        <hr className="bg-dark" />
+                                                        <p className="card-text text-left">{movie.Plot}</p>
+                                                        <Link to={`/movie/${index}`} className="searchBtn btn btn-primary">{movie.Title} Details</Link>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -80,7 +84,7 @@ class MovieSearchContainer extends React.Component{
     }
 }
 
-const mapStateToProps = ({ search }) => ({
+const mapStateToProps = ({search}) => ({
     movies: search.movies
 })
 

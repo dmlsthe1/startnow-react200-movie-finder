@@ -1,5 +1,5 @@
 defaultState = {
-    movieDetails: ""
+    movieDetails: {}
 }
 
 export default function movieDetailReducer (state = defaultStatus, action) {

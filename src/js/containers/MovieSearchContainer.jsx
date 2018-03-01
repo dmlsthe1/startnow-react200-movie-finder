@@ -61,15 +61,13 @@ class MovieSearchContainer extends React.Component{
                                             <img className="card-img p-3" src={movie.Poster} alt="Card image cap" />
                                         </div>
                                         <div className="col-sm-9  pl-0">
-                                            <div className="row">
-                                                <div className="searchBtnParent cardSize pl-0">
-                                                    <div className="searchBtnParent card-body pl-0 text-right">
-                                                        <h3 className="card-title text-left"><a href="#">{movie.Title}</a></h3>
-                                                        <p className="text-left">{movie.Year}</p>
-                                                        <hr className="bg-dark" />
-                                                        <p className="card-text text-left">{movie.Plot}</p>
-                                                        <Link to={`/movie/${index}`} className="searchBtn btn btn-primary">{movie.Title} Details</Link>
-                                                    </div>
+                                            <div className="searchBtnParent cardSize pl-0">
+                                                <div className="searchBtnParent card-body pl-0 text-right">
+                                                    <h3 className="card-title text-left"><a href="#">{movie.Title}</a></h3>
+                                                    <p className="text-left">{movie.Year}</p>
+                                                    <hr className="bg-dark" />
+                                                    <p className="card-text text-left">{movie.Plot}</p>
+                                                    <Link to={`/movie/${index}`} className="searchBtn btn btn-primary">{movie.Title} Details</Link>
                                                 </div>
                                             </div>
                                         </div>

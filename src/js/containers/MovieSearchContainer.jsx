@@ -39,7 +39,7 @@ class MovieSearchContainer extends React.Component{
 
         return (
             <div>
-                <h1 className="text-center py-3">Movie Finder</h1>
+                <h1 className="neon text-center py-3">Movie Finder</h1>
                 <form id="form">
                     <div className="form-row">
                         <div className="col">
@@ -54,16 +54,16 @@ class MovieSearchContainer extends React.Component{
                 {movies.length > 0 && movies.map((movie, index) => {
                     return (
                         <div key={movie.imdbID} className="my-3">
-                            <div className="card">
+                            <div className="card cardBg border border-dark">
                                 <div className="container-fluid">
                                     <div className="row">
                                         <div className="col-sm-3">
                                             <img className="card-img p-3" src={movie.Poster} alt="Card image cap" />
                                         </div>
                                         <div className="col-sm-9  pl-0">
-                                            <div className="searchBtnParent cardSize pl-0">
+                                            <div className="searchBtnParent pl-0">
                                                 <div className="searchBtnParent card-body pl-0 text-right">
-                                                    <h3 className="card-title text-left"><a href="#">{movie.Title}</a></h3>
+                                                    <h3 className="card-title text-left">{movie.Title}</h3>
                                                     <p className="text-left">{movie.Year}</p>
                                                     <hr className="bg-dark" />
                                                     <p className="card-text text-left">{movie.Plot}</p>
